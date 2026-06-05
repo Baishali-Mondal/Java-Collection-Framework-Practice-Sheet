@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+// Write a program to sort an ArrayList of String Alphabetically
+public class SortStringAlphabetically {
+    public static void main(String[] args) {
+
+        ArrayList<String> names = new ArrayList<>();
+        names.add("John");
+        names.add("Mike");
+        names.add("Charlie");
+        names.add("Michael");
+        names.add("Jerry");
+
+        Collections.sort(names);
+//        Collections.shuffle(names);//randomly rearranges (permutes) the elements of a specified List
+
+        System.out.println(names);
+    }
+}

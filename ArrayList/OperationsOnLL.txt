@@ -1,0 +1,52 @@
+import java.util.Iterator;
+import java.util.LinkedList;
+
+//Create a LinkedList and perform various operations like add, remove, and iterate over it.
+public class OperationsOnLL {
+    public static void main(String[] args) {
+        LinkedList<String> fruits = new LinkedList<>();
+
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Grapes");
+        fruits.add("Guava");
+
+        System.out.println("List of fruits -->");
+        System.out.println(fruits);
+
+        fruits.remove("Banana");//removeFirst() and removeLast(); clear();
+
+        fruits.addFirst("Orange");// fruits.addLast(element);
+
+        System.out.println("Modified list of fruits -->");
+        System.out.println(fruits);
+
+        //Iterating over the list using thr foreach
+        System.out.println("Iterating over list using foreach loop");
+        for(String fruit : fruits){
+            System.out.println(fruit);
+        }
+
+        //Iterating using Iterator
+        System.out.println("Iterating over list using Iterator");
+        Iterator<String> iterator = fruits.iterator();
+        while(iterator.hasNext()){
+            String fruit = iterator.next();
+            System.out.println(fruit);
+//            fruits.clear();
+//            fruits.remove(); // ConcurrentModificationException as the Collection is modified
+//            fruits.remove("Guava");// and the modCount has not been updated
+
+
+//            ConcurrentModificationException occurs when a collection is structurally modified during
+//            iteration by any means other than the iterator's own remove() (or ListIterator methods).
+//            The iterator's methods keep its internal modification count synchronized with the collection,
+//            so they are safe.
+
+            if(fruit.equals("Guava")){
+               iterator.remove();//Here while removing it even updates the modCount so we don't counter an error
+            }
+        }
+        System.out.println("The new modified list of fruits : " +fruits);
+    }
+}

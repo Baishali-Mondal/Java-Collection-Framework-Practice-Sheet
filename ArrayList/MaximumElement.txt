@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+//Write a program to find the maximum element from an ArrayList of Integers.
+public class MaximumElement {
+    static void main(String[] args) {
+
+        ArrayList<Integer> numList = new ArrayList<>();
+        numList.add(20);
+        numList.add(58);
+        numList.add(15);
+        numList.add(6);
+        numList.add(50);
+
+        System.out.println("Maximum Element in the list is : " + Collections.max(numList));
+
+    }
+}

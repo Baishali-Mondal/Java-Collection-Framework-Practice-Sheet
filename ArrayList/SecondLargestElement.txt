@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+//Write a program to find the second-largest element in an ArrayList of Integers.
+public class SecondLargestElement {
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(10);
+        list.add(30);
+        list.add(45);
+        list.add(15);
+        list.add(5);
+        list.add(45);
+
+        Collections.sort(list);
+        Collections.reverse(list);
+        int secondMax = list.get(list.size() - 2);
+        System.out.println("Second Largest Element : "+secondMax);
+
+        Collections.sort(list, Collections.reverseOrder());
+        System.out.println(list.get(1));
+        
+        //Both the above approach is good, but it won't work for duplicate elements
+
+//        int max = -1, secMax = -1;
+//
+//        for( Integer i : list){
+//            if(max==-1 || i > max ){
+//                secMax = max;
+//                max = i;
+//            }
+//            else if(i != max && ( secMax ==-1 || i > secMax )){
+//                secMax = i;
+//            }
+//        }
+//        if(secMax != -1) { // if 2nd doesn't exist or to avoid NullPointerException unboxing
+//            System.out.println(secMax);
+//        }else{
+//            System.out.println("No second max element");
+//        }
+    }
+}

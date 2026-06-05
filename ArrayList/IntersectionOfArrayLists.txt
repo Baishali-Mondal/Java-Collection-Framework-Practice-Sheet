@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+
+//Write a program to find the intersection of two ArrayLists.
+public class IntersectionOfArrayLists {
+    public static void main(String[] args){
+
+        ArrayList<Integer> list1 = new ArrayList<>();
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+        list1.add(4);
+        list1.add(8);
+
+        ArrayList<Integer> list2 = new ArrayList<>();
+        list2.add(4);
+        list2.add(5);
+        list2.add(2);
+
+//        if(list1.contains(list2)) //This is comparing with the entire list and not the specific element
+//            if(list1.containsAll(list2))// Do as above
+
+        list1.retainAll(list2);//Built in method of Java Collections for intersection
+        System.out.println(list1); //this gives only the intersecting elements in the list
+    }
+}

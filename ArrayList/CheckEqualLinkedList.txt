@@ -1,0 +1,24 @@
+import java.util.HashSet;
+
+//Write a program to check if a HashSet is a subset of another HashSet.
+public class CheckForEqualHashSet {
+    public static void main(String[] args){
+        HashSet<Integer> set1 = new HashSet<>();
+        set1.add(8);
+        set1.add(2);
+        set1.add(1);
+
+        HashSet<Integer> set2 = new HashSet<>();
+        set2.add(3);
+        set2.add(4);
+        set2.add(8);
+        set2.add(1);
+        set2.add(0);
+
+        if(set2.containsAll(set1)){
+            System.out.println("HashSet 1  is a subset of HashSet 2");
+        }else{
+            System.out.println("HashSet 1 is not a subset of HashSet 2");
+        }
+    }
+}

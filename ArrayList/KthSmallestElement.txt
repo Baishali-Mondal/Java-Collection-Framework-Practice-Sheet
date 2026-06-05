@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+//Write a program to find the kth smallest element in an ArrayList.
+public class KthSmallestElement {
+    public static void main(String[] args){
+
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(5);
+        list.add(1);
+        list.add(3);
+        list.add(9);
+        list.add(4);
+
+        Collections.sort(list);
+
+        int k = 3;
+        if(k<0 || k > list.size()){ //Validation check if k is more than the no of elements
+            System.out.println("Invalid input of k");
+        }else{
+            System.out.println(list.get(k-1));
+        }
+    }
+}
